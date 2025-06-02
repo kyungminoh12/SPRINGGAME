@@ -1,33 +1,60 @@
 
 body {
-    font-family: "Arial", sans-serif;
-    text-align: center;
-    background-color: #fffdf7;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #fff8f0;
+  padding: 2rem;
 }
 h1 {
-    font-size: 2em;
-    margin-top: 20px;
+  font-size: 2rem;
+  color: #d96c6c;
 }
 .badge {
-    width: 150px;
-    margin: 20px;
+  width: 150px;
+  margin-bottom: 1rem;
 }
-.course ul {
-    list-style: none;
-    padding: 0;
+.course-list button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffdfc4;
+  cursor: pointer;
 }
-.course li {
-    margin: 10px 0;
+.course-list button:hover {
+  background-color: #ffd2aa;
 }
-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 10px;
-    border: none;
-    background-color: #ffc0cb;
-    cursor: pointer;
+.hidden {
+  display: none;
 }
-button:hover {
-    background-color: #ffa7b5;
+#result {
+  margin-top: 2rem;
+  animation: pop 1s ease-in-out;
+}
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.progress {
+  width: 80%;
+  background-color: #eee;
+  height: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+.progress-bar {
+  height: 100%;
+  background-color: #ffa07a;
+  border-radius: 10px;
+  transition: width 0.5s;
+}
+.badge-animation {
+  width: 120px;
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-10px);}
 }
