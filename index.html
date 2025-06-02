@@ -1,25 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>여주 봄 드라이브 팜코스</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>봄 코스 인증 완료</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fffbe6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: 'Arial', sans-serif;
+    }
+    #badge {
+      width: 200px;
+      height: auto;
+      display: none;
+      animation: pop 0.5s ease forwards;
+      z-index: 10;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <h1>여주 봄 드라이브 팜코스</h1>
-  <div id="progress-container">
-    <div id="progress-bar"></div>
-  </div>
-  <div id="places">
-    <button onclick="checkIn('picnico')">피크니코</button>
-    <button onclick="checkIn('efosalbab')">이포쌀밥정식</button>
-    <button onclick="checkIn('yjnaturefarm')">여주자연팜</button>
-  </div>
-  <div id="badge" class="hidden">
-    <img src="badge_spring.png" alt="봄 뱃지" />
-    <div class="fireworks">🎆🎉🎇</div>
-  </div>
+  <canvas id="confetti-canvas"></canvas>
+  <img id="badge" src="badge_spring.png" alt="봄 코스 완료 뱃지" />
   <script src="script.js"></script>
+
+<div style="text-align:center; margin-top: 30px;">
+  <button onclick="window.open('https://www.instagram.com', '_blank')" style="padding: 10px 20px; font-size: 16px; border-radius: 12px; background-color: #E1306C; color: white; border: none; cursor: pointer;">
+    친구에게 공유하기 💌
+  </button>
+</div>
+
 </body>
 </html>
