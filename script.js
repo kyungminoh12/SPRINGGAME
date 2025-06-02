@@ -1,17 +1,21 @@
 
-let completed = [];
+const visited = new Set(JSON.parse(localStorage.getItem("visitedPlaces")) || []);
+const progressBar = document.getElementById("progress-bar");
+const badge = document.getElementById("badge");
 
-function completeMission(num) {
-  if (!completed.includes(num)) {
-    completed.push(num);
-    updateProgress();
-    if (completed.length >= 1) {
-      document.getElementById('result').classList.remove('hidden');
-    }
-  }
+function checkIn(place) {
+  visited.add(place);
+  localStorage.setItem("visitedPlaces", JSON.stringify([...visited]));
+  updateProgress();
 }
 
 function updateProgress() {
-  const percent = (completed.length / 3) * 100;
-  document.getElementById('progress-bar').style.width = percent + "%";
+  const total = 3;
+  const percent = (visited.size / total) * 100;
+  progressBar.style.width = percent + "%";
+  if (visited.size >= 1) {
+    badge.classList.remove("hidden");
+  }
 }
+
+window.onload = updateProgress;

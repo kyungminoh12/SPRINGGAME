@@ -1,26 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>여주 봄 드라이브 팜코스</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🌸 여주 봄 드라이브 팜코스</h1>
-  <img src="badge_spring.png" alt="봄 배지" class="badge"/>
-  <div class="progress">
-    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+  <h1>여주 봄 드라이브 팜코스</h1>
+  <div id="progress-container">
+    <div id="progress-bar"></div>
   </div>
-  <div class="course-list">
-    <button onclick="completeMission(1)">✔ 피크니코 (복숭아체험)</button>
-    <button onclick="completeMission(2)">✔ 이포쌀밥정식 (점심)</button>
-    <button onclick="completeMission(3)">✔ 여주자연팜 (딸기체험)</button>
+  <div id="places">
+    <button onclick="checkIn('picnico')">피크니코</button>
+    <button onclick="checkIn('efosalbab')">이포쌀밥정식</button>
+    <button onclick="checkIn('yjnaturefarm')">여주자연팜</button>
   </div>
-  <div id="result" class="hidden">
-    <p>🎉 코스 완료! 꼬마농부 뱃지를 획득했어요!</p>
-    <img src="badge_spring.png" class="badge-animation"/>
+  <div id="badge" class="hidden">
+    <img src="badge_spring.png" alt="봄 뱃지" />
+    <div class="fireworks">🎆🎉🎇</div>
   </div>
   <script src="script.js"></script>
 </body>

@@ -1,60 +1,58 @@
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial';
   text-align: center;
-  background-color: #fff8f0;
-  padding: 2rem;
+  background: #f8fff4;
+  padding: 20px;
 }
-h1 {
-  font-size: 2rem;
-  color: #d96c6c;
+
+#progress-container {
+  width: 80%;
+  margin: 20px auto;
+  background: #eee;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
 }
-.badge {
-  width: 150px;
-  margin-bottom: 1rem;
+
+#progress-bar {
+  height: 100%;
+  background: #4caf50;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
 }
-.course-list button {
-  display: block;
-  margin: 1rem auto;
-  padding: 0.7rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #ffdfc4;
-  cursor: pointer;
-}
-.course-list button:hover {
-  background-color: #ffd2aa;
-}
-.hidden {
+
+#badge.hidden {
   display: none;
 }
-#result {
-  margin-top: 2rem;
-  animation: pop 1s ease-in-out;
+
+#badge {
+  margin-top: 20px;
+  animation: pop 1s ease forwards;
 }
-@keyframes pop {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-.progress {
-  width: 80%;
-  background-color: #eee;
-  height: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-.progress-bar {
-  height: 100%;
-  background-color: #ffa07a;
-  border-radius: 10px;
-  transition: width 0.5s;
-}
-.badge-animation {
-  width: 120px;
+
+#badge img {
+  width: 200px;
   animation: bounce 1s infinite;
 }
+
+.fireworks {
+  font-size: 2rem;
+  margin-top: 10px;
+  animation: explode 1s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
 @keyframes bounce {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(-10px);}
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes explode {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
