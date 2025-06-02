@@ -1,58 +1,76 @@
 
 body {
-  font-family: 'Arial';
+  font-family: 'Arial', sans-serif;
   text-align: center;
-  background: #f8fff4;
+  background: #e8f5e9;
+  margin: 0;
   padding: 20px;
 }
 
-#progress-container {
+.course-selector button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.progress-container {
+  margin-top: 40px;
+  position: relative;
+}
+
+#car-icon {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  transition: left 0.5s ease;
+  width: 50px;
+}
+
+.progress-bar {
   width: 80%;
-  margin: 20px auto;
-  background: #eee;
   height: 30px;
+  background: #ccc;
+  margin: 0 auto;
   border-radius: 15px;
   overflow: hidden;
 }
 
-#progress-bar {
+.progress {
   height: 100%;
   background: #4caf50;
   width: 0%;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease;
 }
 
-#badge.hidden {
+#badge-container {
+  margin-top: 50px;
   display: none;
+  position: relative;
 }
 
 #badge {
-  margin-top: 20px;
-  animation: pop 1s ease forwards;
-}
-
-#badge img {
-  width: 200px;
-  animation: bounce 1s infinite;
-}
-
-.fireworks {
-  font-size: 2rem;
-  margin-top: 10px;
-  animation: explode 1s ease-in-out;
+  width: 150px;
+  animation: pop 1s ease;
 }
 
 @keyframes pop {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1.2); opacity: 1; }
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
 }
 
-@keyframes explode {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+#share-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #ff9800;
+  border: none;
+  color: white;
+  border-radius: 10px;
 }
